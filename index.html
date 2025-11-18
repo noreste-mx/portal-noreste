@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <title>Portal de invitados • Noreste</title>
+  <meta name="theme-color" content="#7a2b84" />
+  <style>
+    /* Paleta inspirada en el logo: rojo → púrpura → azul */
+    :root{
+      --red:#c62a2f;       /* rojo base */
+      --purple:#7a2b84;    /* púrpura intermedio */
+      --blue:#165fbf;      /* azul base */
+      --text:#ffffff;      /* texto principal */
+      --muted:#e6e6e6;     /* textos secundarios */
+      --card-bg:rgba(255,255,255,.08);
+      --card-border:rgba(255,255,255,.22);
+      --btn:#7a2b84;       /* color botón */
+      --btn-hover:#5e2064; /* hover botón */
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      /* Gradiente diagonal similar al del logo */
+      background:
+        radial-gradient(1200px 600px at 100% 0%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(135deg, var(--red) 0%, var(--purple) 48%, var(--blue) 100%);
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+    .wrap{ width:100%; max-width:760px; display:grid; gap:18px; }
+    header{ text-align:center; }
+    .brand{
+      width:200px; height:auto; display:block; margin:0 auto 6px;
+      filter: drop-shadow(0 6px 24px rgba(0,0,0,.25));
+    }
+    .subtitle{ margin:0; font-size:14px; color:var(--muted); letter-spacing:.3px; }
+    .card{
+      background:var(--card-bg); border:1px solid var(--card-border); border-radius:16px;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      padding:22px; box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+    .title{ margin:0 0 10px; font-size:26px; font-weight:800; line-height:1.15; }
+    .terms{
+      font-size:14px; line-height:1.5; color:#f2f2f2;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15);
+      border-radius:12px; padding:12px; max-height:180px; overflow:auto;
+    }
+    .accept{ margin:12px 0 6px; display:flex; gap:10px; align-items:center; font-size:14px; user-select:none; }
+    .btn{
+      display:inline-block; background:var(--btn); color:#fff; border:0; padding:12px 20px;
+      border-radius:10px; font-weight:800; letter-spacing:.4px; cursor:pointer;
+      transition: all .18s ease-out; text-decoration:none;
+    }
+    .btn:hover{ background:var(--btn-hover); transform: translateY(-1px); }
+    .btn:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
+    footer{ text-align:center; font-size:12px; color:var(--muted); margin-top:4px; }
+    .links{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:center; margin-top:10px; }
+    .link{ color:#fff; opacity:.9; text-decoration:underline; text-underline-offset:3px; font-size:13px; }
+    @media (min-width:720px){
+      .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <!-- Sube el archivo del logo a assets/logo.png -->
+      <img class="brand" src="./assets/logo_noreste.png" alt="Noreste" />
+      <p class="subtitle">Red de invitados</p>
+    </header>
+
+    <section class="grid2">
+      <section class="card">
+        <h1 class="title">Bienvenido a la red de invitados</h1>
+        <p style="margin:8px 0 16px; color:#f6f6f6">
+          Para continuar, acepta los Términos y condiciones. Serás redirigido a nuestra página oficial.
+        </p>
+
+        <div class="terms" id="termsBox">
+          <strong>Términos y condiciones</strong><br /><br />
+          Al conectarse a esta red usted acepta:
+          <ul>
+            <li>Usar la red de forma temporal y para navegación legítima.</li>
+            <li>No realizar actividades ilegales, enviar spam ni vulnerar derechos de autor.</li>
+            <li>Entender que el servicio se ofrece “tal cual”, sin garantías de disponibilidad, velocidad o confidencialidad.</li>
+            <li>Ser responsable del contenido que transmita y cumplir con las leyes aplicables.</li>
+          </ul>
+          Si no está de acuerdo, por favor no utilice la red.
+        </div>
+
+        <label class="accept">
+          <input type="checkbox" id="chkAccept" />
+          <span>Acepto los términos y condiciones</span>
+        </label>
+
+        <!-- Cambia aquí tu destino por la página de Facebook empresarial -->
+        <a id="btnGo" class="btn" href="https://www.facebook.com/AutobusesDelNoresteEnYucatan?locale=es_LA" disabled>ACEPTAR</a>
+
+        <div class="links">
+          <a class="link" href="#" onclick="forcePortal();return false;">¿No aparece el portal? Forzar apertura</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="title" style="font-size:22px;">Información</h2>
+        <ul style="margin:0; padding-left:18px; line-height:1.6;">
+          <li>Esta es una red de uso público con medidas de aislamiento entre clientes.</li>
+          <li>El acceso a servicios críticos o redes internas no está permitido.</li>
+          <li>Para soporte, contacte al personal de Noreste.</li>
+        </ul>
+        <div style="height:12px"></div>
+        <small>Al continuar, acepta nuestra política de uso aceptable.</small>
+      </section>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Noreste. Todos los derechos reservados.
+    </footer>
+  </main>
+
+  <script>
+    // Habilitar botón solo si acepta los términos
+    const chk = document.getElementById('chkAccept');
+    const btn = document.getElementById('btnGo');
+    const year = document.getElementById('y');
+    year.textContent = new Date().getFullYear();
+
+    function toggle(){
+      if(chk.checked){ btn.removeAttribute('disabled'); }
+      else{ btn.setAttribute('disabled','disabled'); }
+    }
+    chk.addEventListener('change', toggle);
+    toggle();
+
+    // Permitir definir un destino distinto vía ?to=https://...
+    const params = new URLSearchParams(location.search);
+    const dest = params.get('to');
+    if(dest && /^https?:\/\//i.test(dest)) btn.href = dest;
+
+    // Forzar apertura del portal en algunos navegadores
+    function forcePortal(){
+      // Sitio HTTP que dispara el detector de portal cautivo
+      location.href = 'http://neverssl.com/';
+    }
+  </script>
+</body>
+</html>
