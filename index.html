@@ -3,75 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portal de invitados • Noreste</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
   <meta http-equiv="Pragma" content="no-cache"/>
   <meta http-equiv="Expires" content="0"/>
-  <title>Portal de invitados • Noreste</title>
   <meta name="theme-color" content="#7a2b84" />
   <style>
-    /* Paleta inspirada en el logo: rojo → púrpura → azul */
     :root{
-      --red:#c62a2f;       /* rojo base */
-      --purple:#7a2b84;    /* púrpura intermedio */
-      --blue:#165fbf;      /* azul base */
-      --text:#ffffff;      /* texto principal */
-      --muted:#e6e6e6;     /* textos secundarios */
-      --card-bg:rgba(255,255,255,.08);
-      --card-border:rgba(255,255,255,.22);
-      --btn:#7a2b84;       /* color botón */
-      --btn-hover:#5e2064; /* hover botón */
+      --red:#c62a2f; --purple:#7a2b84; --blue:#165fbf;
+      --text:#ffffff; --muted:#e6e6e6;
+      --card-bg:rgba(255,255,255,.08); --card-border:rgba(255,255,255,.22);
+      --btn:#7a2b84; --btn-hover:#5e2064;
     }
     html,body{height:100%}
     body{
-      margin:0;
-      color:var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-      /* Gradiente diagonal similar al del logo */
+      margin:0; color:var(--text);
+      font-family:system-ui,-apple-system,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif;
       background:
         radial-gradient(1200px 600px at 100% 0%, rgba(255,255,255,.06), transparent 60%),
-        linear-gradient(135deg, var(--red) 0%, var(--purple) 48%, var(--blue) 100%);
-      display:grid;
-      place-items:center;
-      padding:24px;
+        linear-gradient(135deg,var(--red) 0%,var(--purple) 48%,var(--blue) 100%);
+      display:grid; place-items:center; padding:24px;
     }
-    .wrap{ width:100%; max-width:760px; display:grid; gap:18px; }
-    header{ text-align:center; }
-    .brand{
-      width:200px; height:auto; display:block; margin:0 auto 6px;
-      filter: drop-shadow(0 6px 24px rgba(0,0,0,.25));
-    }
-    .subtitle{ margin:0; font-size:14px; color:var(--muted); letter-spacing:.3px; }
+    .wrap{width:100%;max-width:760px;display:grid;gap:18px;}
+    header{text-align:center;}
+    .brand{width:200px;display:block;margin:0 auto 6px;filter:drop-shadow(0 6px 24px rgba(0,0,0,.25));}
+    .subtitle{margin:0;font-size:14px;color:var(--muted);letter-spacing:.3px;}
     .card{
-      background:var(--card-bg); border:1px solid var(--card-border); border-radius:16px;
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-      padding:22px; box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;
+      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+      padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.18);
     }
-    .title{ margin:0 0 10px; font-size:26px; font-weight:800; line-height:1.15; }
+    .title{margin:0 0 10px;font-size:26px;font-weight:800;line-height:1.15;}
     .terms{
-      font-size:14px; line-height:1.5; color:#f2f2f2;
-      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15);
-      border-radius:12px; padding:12px; max-height:180px; overflow:auto;
+      font-size:14px;line-height:1.5;color:#f2f2f2;
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+      border-radius:12px;padding:12px;max-height:180px;overflow:auto;
     }
-    .accept{ margin:12px 0 6px; display:flex; gap:10px; align-items:center; font-size:14px; user-select:none; }
+    .accept{margin:12px 0 6px;display:flex;gap:10px;align-items:center;font-size:14px;}
     .btn{
-      display:inline-block; background:var(--btn); color:#fff; border:0; padding:12px 20px;
-      border-radius:10px; font-weight:800; letter-spacing:.4px; cursor:pointer;
-      transition: all .18s ease-out; text-decoration:none;
+      display:inline-block;background:var(--btn);color:#fff;border:0;padding:12px 20px;
+      border-radius:10px;font-weight:800;letter-spacing:.4px;cursor:pointer;
+      transition:all .18s ease-out;text-decoration:none;
     }
-    .btn:hover{ background:var(--btn-hover); transform: translateY(-1px); }
-    .btn:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
-    footer{ text-align:center; font-size:12px; color:var(--muted); margin-top:4px; }
-    .links{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:center; margin-top:10px; }
-    .link{ color:#fff; opacity:.9; text-decoration:underline; text-underline-offset:3px; font-size:13px; }
+    .btn:hover{background:var(--btn-hover);transform:translateY(-1px);}
+    .btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+    footer{text-align:center;font-size:12px;color:var(--muted);margin-top:4px;}
+    .notice{margin-top:10px;font-size:12px;color:#ffdede;}
     @media (min-width:720px){
-      .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+      .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
     }
   </style>
 </head>
 <body>
   <main class="wrap">
     <header>
-      <!-- Sube el archivo del logo a assets/logo.png -->
       <img class="brand" src="./assets/logo_noreste.png" alt="Noreste" />
       <p class="subtitle">Red de invitados</p>
     </header>
@@ -79,20 +64,20 @@
     <section class="grid2">
       <section class="card">
         <h1 class="title">Bienvenido a la red de invitados</h1>
-        <p style="margin:8px 0 16px; color:#f6f6f6">
-          Para continuar, acepta los Términos y condiciones. Serás redirigido a nuestra página oficial.
+        <p style="margin:8px 0 16px;color:#f6f6f6">
+          Acepta los Términos y condiciones para continuar. Serás redirigido a nuestra página oficial.
         </p>
 
-        <div class="terms" id="termsBox">
+        <div class="terms">
           <strong>Términos y condiciones</strong><br /><br />
           Al conectarse a esta red usted acepta:
           <ul>
-            <li>Usar la red de forma temporal y para navegación legítima.</li>
-            <li>No realizar actividades ilegales, enviar spam ni vulnerar derechos de autor.</li>
-            <li>Entender que el servicio se ofrece “tal cual”, sin garantías de disponibilidad, velocidad o confidencialidad.</li>
-            <li>Ser responsable del contenido que transmita y cumplir con las leyes aplicables.</li>
+            <li>Uso temporal y navegación legítima.</li>
+            <li>No realizar actividades ilegales ni vulnerar derechos de autor.</li>
+            <li>El servicio se ofrece “tal cual”, sin garantías de disponibilidad o velocidad.</li>
+            <li>Usted es responsable del contenido que transmite.</li>
           </ul>
-          Si no está de acuerdo, por favor no utilice la red.
+          Si no está de acuerdo, no utilice la red.
         </div>
 
         <label class="accept">
@@ -100,20 +85,16 @@
           <span>Acepto los términos y condiciones</span>
         </label>
 
-        <!-- Cambia aquí tu destino por la página de Facebook empresarial -->
-        <a id="btnGo" class="btn" href="#" disabled>ACEPTAR</a>
-
-        <div class="links">
-          <a class="link" href="#" onclick="forcePortal();return false;">¿No aparece el portal? Forzar apertura</a>
-        </div>
+        <button id="btnGo" class="btn" disabled>ACEPTAR</button>
+        <div id="status" class="notice" style="display:none;"></div>
       </section>
 
       <section class="card">
         <h2 class="title" style="font-size:22px;">Información</h2>
-        <ul style="margin:0; padding-left:18px; line-height:1.6;">
-          <li>Esta es una red de uso público con medidas de aislamiento entre clientes.</li>
-          <li>El acceso a servicios críticos o redes internas no está permitido.</li>
-          <li>Para soporte, contacte al personal de Noreste.</li>
+        <ul style="margin:0;padding-left:18px;line-height:1.6;">
+          <li>Red aislada: los clientes no se ven entre sí.</li>
+          <li>Acceso a redes internas bloqueado.</li>
+          <li>Para soporte contacte al personal de Noreste.</li>
         </ul>
         <div style="height:12px"></div>
         <small>Al continuar, acepta nuestra política de uso aceptable.</small>
@@ -126,29 +107,80 @@
   </main>
 
   <script>
-    // Habilitar botón solo si acepta los términos
     const chk = document.getElementById('chkAccept');
     const btn = document.getElementById('btnGo');
-    const year = document.getElementById('y');
-    year.textContent = new Date().getFullYear();
+    const statusBox = document.getElementById('status');
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-    function toggle(){
-      if(chk.checked){ btn.removeAttribute('disabled'); }
-      else{ btn.setAttribute('disabled','disabled'); }
+    function toggle(){ btn.disabled = !chk.checked; }
+    chk.addEventListener('change', toggle); toggle();
+
+    // Detectar parámetros que traiga Aruba
+    const qs = new URLSearchParams(location.search);
+    let acceptUrl = null;
+
+    const candidateKeys = [
+      'accept_url','success_url','continue_url','grant_url',
+      'base_grant_url','login_url','url','redirect'
+    ];
+    for(const k of candidateKeys){
+      const v = qs.get(k);
+      // Filtrar URLs plausibles (http o https)
+      if(v && /^https?:\/\//i.test(v)){
+        acceptUrl = v;
+        break;
+      }
     }
-    chk.addEventListener('change', toggle);
-    toggle();
 
-    // Permitir definir un destino distinto vía ?to=https://...
-    const params = new URLSearchParams(location.search);
-    const dest = params.get('to');
-    if(dest && /^https?:\/\//i.test(dest)) btn.href = dest;
-
-    // Forzar apertura del portal en algunos navegadores
-    function forcePortal(){
-      // Sitio HTTP que dispara el detector de portal cautivo
-      location.href = 'http://neverssl.com/';
+    // Mostrar aviso si no se encontró
+    if(!acceptUrl){
+      statusBox.style.display='block';
+      statusBox.textContent='No se detectó URL de aceptación. Necesitamos ver la URL completa que te entrega Aruba.';
     }
+
+    // Redirección final (Facebook) fijada por Aruba en “Redirigir URL”
+    // Si quisiéramos forzar página final manual aquí:
+    const finalDest = qs.get('to') || null; // opcional
+
+    async function doAccept(){
+      if(!acceptUrl){
+        alert('Falta la URL de aceptación del portal. Copia la URL completa y envíamela.');
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'Procesando...';
+      statusBox.style.display='block';
+      statusBox.textContent='Confirmando acceso…';
+
+      let ok = false;
+      try{
+        // Intento de GET (algunos portales sólo requieren que se abra la URL)
+        const r = await fetch(acceptUrl, {mode:'no-cors'});
+        // Con no-cors no podemos leer estado; asumimos éxito si no lanza excepción.
+        ok = true;
+      }catch(e){
+        console.warn('Fetch fallo, intento fallback:', e);
+      }
+      if(!ok){
+        // Fallback: cambiar location para que el AP vea la solicitud directa
+        statusBox.textContent='Enviando confirmación…';
+        location.href = acceptUrl;
+        return;
+      }
+      // Si Aruba ya marcó la sesión, el propio AP hará la redirección configurada.
+      statusBox.textContent='Acceso concedido. Redirigiendo…';
+      setTimeout(()=>{
+        if(finalDest){
+          location.href = finalDest;
+        }else{
+          // Dejar que Aruba haga su redirigir URL; si no lo hace en 2s, probar abrir Facebook manual.
+          const fallbackFacebook = 'https://www.facebook.com/AutobusesDelNoresteEnYucatan?locale=es_LA';
+          setTimeout(()=>{ location.href = fallbackFacebook; }, 2000);
+        }
+      }, 500);
+    }
+
+    btn.addEventListener('click', doAccept);
   </script>
 </body>
 </html>
